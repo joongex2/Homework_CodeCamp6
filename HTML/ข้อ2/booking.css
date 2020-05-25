@@ -1,0 +1,66 @@
+/* table */
+/*
+input {
+    width: 90%;
+}
+
+select {
+    width: 100%;
+}
+
+input[type="number"] {
+    width: 75px;
+}
+
+input[type="button"] {
+    width: 75px;
+} */
+
+/* grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(4, 80px);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 10px;
+}
+
+select { 
+    width: 100%;
+}
+
+input[type="date"] {
+    width: 100%;
+}
+
+input[type="number"] {
+    width: calc(100% - 4px);
+}
+
+.grid-item-1 {
+    grid-column: 1/ span 2;
+}
+
+.grid-item-2 {
+    grid-column: 3/ span 2;
+}
+
+.grid-item-3 {
+    grid-column: 1/ span 2;
+    grid-row: 2;
+    width: calc(100% - 5px);
+}
+
+.grid-item-4 {
+    grid-column: 3/ span 2;
+    grid-row: 2;
+    width: calc(100% - 5px);
+}
+
+.orange {
+    color: orange; 
+}
+
+.orange-button {
+    color: white;
+    background-color: orange;
+}
