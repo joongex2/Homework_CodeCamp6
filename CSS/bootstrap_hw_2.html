@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+        @font-face {
+            font-family: BebasNeue-Regular;
+            src: url("font/BebasNeue-Regular.ttf");
+        }
+
+        * {
+            font-family: BebasNeue-Regular;
+        }
+
+        header {
+            position: fixed;
+            display: flex;
+            justify-content: space-between;
+            color: palevioletred;
+            width: 100%;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 50%;
+            left: -55px;
+            transform: rotate(-90deg);
+            color: palevioletred;
+            font-size: 2em;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        .box {
+            width: 30px;
+            height: 30px;
+            background-color: purple;
+        }
+
+        .background {
+            width: 100%;
+            height: auto;
+        }
+
+        .background-text {
+            text-align: center;
+            color: white;
+            position: absolute;
+            width: 100%;
+            top: 40%;
+        }
+
+        .background-text-1 {
+            color: red;
+            font-size: 5em;
+            font-weight: 900;
+        }
+
+        .background-text-2 {
+            color: white;
+            font-size: 3em;
+            font-weight: 100;
+        }
+
+        .form {
+            background: #FFF;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0px 1px 20px 20px rgba(234, 229, 229, 0.2784313725490196);
+            position: relative;
+            width: 70%;
+            margin: -230px auto 0 auto;
+            text-align: center;
+        }
+
+        .grid-container {
+            display: grid;
+            text-align: left;
+            grid-gap: 3%;
+            margin-bottom: 40px;
+        }
+
+        .button {
+            border-radius: 10px;
+            background-color: red;
+            color: white;
+            width: 100px;
+        }
+
+        .text {
+            width: 70%;
+            margin: 50px auto;
+            font-size: 1.5em;
+        }
+
+        .picture {
+            width: 70%;
+            height: 200px;
+            background-color: palevioletred;
+            margin: 0 auto 50px auto;
+        }
+
+        .width-container {
+            width: 70%;
+            /* margin: 0 auto; */
+        }
+
+        .topic {
+            color: red;
+            font-size: 3em;
+        }
+
+        .mobile {
+            position: relative;
+            width: 175%;
+            margin-left: -150px;
+            z-index: -1;
+        }
+
+        .client-container {
+            width: 70%;
+            text-align: center;
+            margin: 0 auto;
+            line-height: 200%;
+        }
+
+        .client {
+            display: inline-block;
+            color: red;
+            font-size: 1.5em;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .client-logo {
+            display: flex;
+            flex-wrap: wrap;
+            width: 90%;
+            margin: 50px auto 0 auto;
+        }
+
+        .client-logo-item {
+            background-color: palevioletred;
+            width: 80px;
+            height: 80px;
+            margin: 10px;
+        }
+
+        .con1-item {
+            text-align: left;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .mobile {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>p</div>
+        <div>
+            <div class="box"></div>
+            <div>ABOUT</div>
+        </div>
+    </header>
+    <div class="sidebar">-- pimclick@</div>
+    <div>
+        <div class="background-text"><span class="background-text-1">pimclick@</span>
+            <br><span class="background-text-2">creative digital agency</span></div>
+        <img class="background" src="img/background.jpg" alt="background">
+        <div class="form">
+            <div style="font-size: 4em;">Contact us <span style="color: red;">today</span></div>
+            <div class=container>
+                <div class="row">
+                    <div class="con1-item col-sm-6">Your Name (required)<br>
+                        <input style="width: 100%"></input>
+                    </div>
+                    <div class="con1-item col-sm-6">Your Email (required)<br>
+                        <input style="width: 100%">
+                    </div>
+                    <div class="con1-item col-12">Subject<br>
+                        <input style="width: 100%">
+                    </div>
+                    <div class="con1-item col-12">Your Message<br>
+                        <textarea style="width: 100%" name="" id="" cols="30" rows="15"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div><input type="button" class="button" value="SEND"></button></div>
+        </div>
+    </div>
+    <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cumque deserunt dolores, illum nam
+        asperiores aliquam laboriosam qui placeat quo inventore quod odit perferendis sit nobis nihil rem ea commodi
+        est explicabo dolorem sed? Dicta cupiditate officia reiciendis dolores, nostrum eveniet sed voluptatum sint
+        fuga blanditiis culpa possimus ratione unde natus.</div>
+    <div class="picture"></div>
+    <div class="width-container container">
+        <div class="row">
+            <div class="col-sm-6">
+                <span class="topic">Digital Strategy</span><br><br>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+            </div>
+            <div class="col-sm-6"><span class="topic">Digital Strategy</span><br><br>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+            </div>
+            <div class="col-sm-6"><span class="topic">Digital Strategy</span><br><br>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+            </div>
+            <div class="col-sm-6"><span class="topic">Digital Strategy</span><br><br>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+            </div>
+            <div class="col-sm-6"><span class="topic">Digital Strategy</span><br><br>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+                <div>Lorem, ipsum.</div>
+            </div>
+            <div class="col-sm-6"><img class="mobile" src="img/mobile.png" alt=""></div>
+        </div>
+    </div>
+    <!-- <div class="flex-container">
+        <div class="flex-item">
+            <span class="topic">Digital Strategy</span><br><br>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+        </div>
+        <div class="flex-item">
+            <span class="topic">Digital Production</span><br><br>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+        </div>
+        <div class="flex-item">
+            <span class="topic">E-Marketing</span><br><br>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+        </div>
+        <div class="flex-item">
+            <span class="topic">Graphic Design</span><br><br>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+        </div>
+        <div class="flex-item">
+            <span class="topic" style="position: relative;">Video production</span><br><br>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+            <div>Lorem, ipsum.</div>
+        </div>
+        <div class="flex-item"><img class="mobile" src="img/mobile.png" alt=""></div>
+    </div> -->
+    <div class="client-container"><span class="client">Our Clients</span><br>We partner up with forward thinking
+        clients,<br>being an extension of it's marketing area.</div>
+    <div class="client-logo">
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+        <div class="client-logo-item"></div>
+    </div>
+    </div>
+</body>
+
+</html>

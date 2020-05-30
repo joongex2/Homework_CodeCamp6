@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animation-normal {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            animation-name: color-change;
+            animation-duration: 5s;
+            animation-direction: normal;
+        }
+
+        .animation-reverse {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            animation-name: color-change;
+            animation-duration: 5s;
+            animation-direction: reverse;
+        }
+
+        .animation-alternate {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            animation-name: color-change;
+            animation-duration: 5s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        @keyframes color-change {
+            0% {
+                background-color: red;
+            }
+
+            25% {
+                background-color: orange;
+            }
+
+            50% {
+                background-color: yellow;
+            }
+
+            75% {
+                background-color: green;
+            }
+
+            100% {
+                background-color: blue
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex-container">
+        <div class="flex-item">
+            <div>ANIMATION-NORMAL</div>
+            <div class="animation-normal"></div>
+        </div>
+        <div class="flex-item">
+            <div>ANIMATION-REVERSE</div>
+            <div class="animation-reverse"></div>
+        </div>
+        <div class="flex-item">
+            <div>ANIMATION-ALTERNATE</div>
+            <div class="animation-alternate"></div>
+        </div>
+    </div>
+</body>
+
+</html>

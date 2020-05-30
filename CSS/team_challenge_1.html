@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table {
+            width: 50%;
+            table-layout: fixed;
+        }
+
+        .first {
+            width: 20%;
+        }
+
+        td:nth-child(1) {
+            padding-left: 5px;
+        }
+
+        .width100 {
+            width: calc(100% - 4px);
+        }
+
+        .width100-select {
+            width: calc(100% - 2px);
+        }
+
+        .form-setup {
+            color: grey;
+            font-size: 0.75em;
+            background-color: #e3e3e3;
+            border-top: solid 1px grey;
+            padding: 5px;
+            font-weight: bold;
+        }
+
+        .question {
+            background-color: #fff3a8;
+            font-weight: bold;
+            color: #a59c66;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <table>
+            <colgroup>
+                <col class="first">
+                <col class="second">
+                <col class="third">
+            </colgroup>
+            <tbody>
+                <tr>
+                    <td>Name <span style="color:red;">*</span>:</td>
+                    <td><input type="text" class="width100"></td>
+                    <td><button class="question">?</button></td>
+                </tr>
+                <tr>
+                    <td>Tab Text <span style="color:red;">*</span>:</td>
+                    <td><input type="text" class="width100"></td>
+                    <td><button class="question">?</button></td>
+                </tr>
+                <tr>
+                    <td>URL <span style="color:red;">*</span>:</td>
+                    <td>http://www.wizehive.com/webform/</td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="form-setup">FORM SETUP</td>
+                </tr>
+                <tr>
+                    <td>From:</td>
+                    <td>
+                        <select name="from" id="from" class="width100-select">
+                            <option value=""></option>
+                        </select>
+                    </td>
+                    <td><button>Edit</button></td>
+                </tr>
+                <tr>
+                    <td>Logo:</td>
+                    <td>no logo uploaded</td>
+                    <td><button>Upload Logo</button></td>
+                </tr>
+                <tr>
+                    <td>Template Text:</td>
+                    <td><select name="language" id="language" class="width100-select">
+                            <option value="english">English</option>
+                        </select></td>
+                    <td><button>Edit</button></td>
+                </tr>
+                <tr>
+                    <td>Review Form:</td>
+                    <td><select name="reviewfrom" id="reviewfrom" class="width100-select">
+                            <option value="Default">Default</option>
+                        </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Review Score</td>
+                    <td><select name="score" id="score" class="width100-select">
+                            <option value="Rating">Rating</option>
+                        </select></td>
+                    <td><button>Reload Fields</button></td>
+                </tr>
+                <tr>
+                    <td>Scoring Type:</td>
+                    <td><select name="type" id="type">
+                            <option value="Average">Average</option>
+                        </select></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Max Score:</td>
+                    <td><input type="text" class="width100" value="4.00"></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>

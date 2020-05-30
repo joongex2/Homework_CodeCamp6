@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        /* selector example */
+        /* 1. Basic selectors */
+        /* 1.1 Universal selector */
+        /* 1.2 Type selector */
+        p {
+            color: orange;
+        }
+
+        /* 1.3 Class selector */
+        .class13 {
+            color: red;
+        }
+
+        /* 1.4 ID selector */
+        #id14 {
+            color: green;
+        }
+
+        /* 1.5 Attribute selector */
+        [href="123"] {
+            color: purple
+        }
+
+        /* 2. Group selectors */
+        .g1,
+        #g2 {
+            color: yellowgreen;
+        }
+
+        /* 4. Pseudo selector */
+        /* 4.1 Pseudo class */
+        a.hover:hover {
+            color: purple;
+        }
+
+        /* 4.2 Pseudo element */
+        input::placeholder {
+            background-color: rosybrown;
+        }
+
+        /* combinator examples */
+        div.combinator-default {
+            background-color: white;
+        }
+
+        /* 1. Descendant combinator */
+        div.a1 div.a2 {
+            background-color: red !important;
+        }
+
+        /* 2. Child combinator */
+        div.b1>div.b2 {
+            background-color: red !important;
+        }
+
+        /* 3. General sibling combinator */
+        div.c1~div.c2 {
+            background-color: red !important;
+        }
+
+        /* 4. Adjacent sibling combinator */
+        div.d1+div.d2 {
+            background-color: red !important;
+        }
+
+        .grid-container {
+            display: grid;
+            grid: 50px 50px/ 50px 50px 50px;
+            grid-gap: 10px;
+            background-color: #2196F3;
+            padding: 10px;
+            width: fit-content;
+        }
+
+        .grid-container>div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            font-size: 30px;
+        }
+
+        .flex-container {
+            display: flex;
+            flex-wrap: wrap;
+            width: 300px;
+            background-color: #2196F3;
+            padding: 5px;
+            margin: -5px;
+        }
+
+        .flex-item {
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 20px 0;
+            margin: 5px;
+            font-size: 30px;
+        }
+
+        .position-parent {
+            position: relative;
+            border: solid 1px black;
+        }
+
+        /* position */
+        .position-container {
+            width: 100px;
+            height: 100px;
+            border: solid 1px black;
+        }
+
+        .position-item {
+            background-color: red;
+            border: solid 1px black;
+            left: 50px;
+            bottom: 40px;
+        }
+
+        /* z-index */
+        .z-index-auto {
+            position: absolute;
+            background-color: red;
+            width: 100px;
+            height: 100px;
+            top: 0px;
+            left: 0px;
+        }
+
+        .z-index-1 {
+            position: absolute;
+            background-color: orange;
+            width: 100px;
+            height: 100px;
+            top: 20px;
+            left: 20px;
+        }
+
+        .z-index-2 {
+            position: absolute;
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+            top: 40px;
+            left: 40px;
+        }
+
+        .z-index-3 {
+            position: absolute;
+            background-color: green;
+            width: 100px;
+            height: 100px;
+            top: 60px;
+            left: 60px;
+        }
+
+        .z-index-4 {
+            position: absolute;
+            background-color: blue;
+            width: 100px;
+            height: 100px;
+            top: 80px;
+            left: 80px;
+        }
+
+        .z-index-initial {
+            position: absolute;
+            background-color: darkblue;
+            width: 100px;
+            height: 100px;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. CSS syntax ประกอบด้วยอะไรบ้าง - ยกตัวอย่าง
+    2. CSS มีกี่แบบอะไรบ้าง
+    3. selector มีกี่แบบอะไรบ้าง - ยกตัวอย่าง
+    4. combinator มีกี่แบบอะไรบ้าง - ยกตัวอย่าง
+    1-4 สรุปแบบตาราง -->
+    <table>
+        <thead>
+            <tr>
+                <th>CSS syntax</th>
+                <th>CSS writing</th>
+                <th>selector</th>
+                <th>combinator</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>ประกอบด้วย<br>
+                    <ul>
+                        <li>Selector</li>
+                        <li>Declaration:
+                            <ul>
+                                <li>Property</li>
+                                <li>Value</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </td>
+                <td>3 แบบ<br>
+                    <ul>
+                        <li>Inline CSS</li>
+                        <li>Internal or Embedded CSS</li>
+                        <li>External CSS</li>
+                    </ul>
+                </td>
+                <td>4 แบบหลัก<br>
+                    <ol>
+                        <li>Basic selectors<br>
+                            <ol>
+                                <li>Universal selector</li>
+                                <li>Type selector</li>
+                                <li>Class selector</li>
+                                <li>ID selector</li>
+                                <li>Attribute selector</li>
+                            </ol>
+                        </li>
+                        <li>Grouping selectors<br>
+                            <ol>
+                                <li>Selector list</li>
+                            </ol>
+                        </li>
+                        <li>Combinators (in <b>combinator</b> answer)</li>
+                        <li>Pseudo<br>
+                            <ol>
+                                <li>Pseudo classes</li>
+                                <li>Pseudo elements</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </td>
+                <td>4 แบบ<br>
+                    <ol>
+                        <li>Descendant combinator</li>
+                        <li>Child combinator</li>
+                        <li>General sibling combinator</li>
+                        <li>Adjacent sibling combinator</li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>For example css syntax</h3>
+    h1 {color: blue;font-size:12px}<br>
+    Selector = h1<br>
+    Declaration = {color: blue;font-size:12px}<br>
+    Property = color, font-size<br>
+    Value = blue, 12px
+    <h3>For example css writing</h3>
+    Inline CSS -> &ltp style="color: red;"&gthello&lt/p&gt<br>
+    Internal or Embedded CSS -> &lthead&gt &ltstyle&gt
+    p {
+    color: red;
+    }
+    &lt/style&gt&lt/head&gt<br>
+    External CSS -> <ul>
+        <li>index.html -> &lthead&gt&ltlink rel="stylesheet" type="text/css" href="index.css"&gt&lt/head&gt </li>
+        <li>index.css -> p {
+            color: red;
+            }</li>
+    </ul>
+    <h3>selector example Case</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Syntax</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="4">1. Basic selectors</td>
+            </tr>
+            <tr>
+                <td>1.1 Universal selector</td>
+                <td>* ns|* *|*s</td>
+                <td>Selects all elements.</td>
+                <td>* will match all the elements of the document. (not have example)</td>
+            </tr>
+            <tr>
+                <td>1.2 Type selector</td>
+                <td>elementname</td>
+                <td>Selects all elements that have the given node name.</td>
+                <td>
+                    <p>elementname</p>
+                </td>
+            </tr>
+            <tr>
+                <td>1.3 Class selector</td>
+                <td>.classname</td>
+                <td>Selects all elements that have the given node name.</td>
+                <td>
+                    <div class="class13">classname</div>
+                </td>
+            </tr>
+            <tr>
+                <td>1.4 ID selector</td>
+                <td>#idname</td>
+                <td>Selects all elements that have the given node name.</td>
+                <td>
+                    <div id="id14">idname</div>
+                </td>
+            </tr>
+            <tr>
+                <td>1.5 Attribute selector</td>
+                <td>[attr] [attr=value] [attr~=value] [attr|=value] [attr^=value] [attr$=value] [attr*=value]</td>
+                <td>Selects all elements that have the given attribute.</td>
+                <td><a href="123">attr</a></td>
+            </tr>
+            <tr>
+                <td colspan="4">2 Grouping selectors</td>
+            </tr>
+            <tr>
+                <td>2.1 Selector list</td>
+                <td>A, B</td>
+                <td>The , is a grouping method, it selects all the matching nodes.</td>
+                <td>
+                    <div class="g1">A</div>
+                    <div id="g2">B</div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="4">3. Combinators -> see in combinator example</td>
+            </tr>
+            <tr>
+                <td colspan="4">4. Pseudo</td>
+            </tr>
+            <tr>
+                <td>4.1 Pseudo classes</td>
+                <td>: (e.g. a.hover)</td>
+                <td>The : pseudo allow the selection of elements based on state information that is not contained in the
+                    document tree.</td>
+                <td><a class="hover">hover me !</a></td>
+            </tr>
+            <tr>
+                <td>4.2 Pseudo elements</td>
+                <td>:: (e.g. input::placeholder)</td>
+                <td>The :: pseudo represent entities that are not included in HTML.</td>
+                <td><input type="text" placeholder="placeholder"></td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>combinator example</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Syntax</th>
+                <th>Description</th>
+                <th>Example</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1. Descendant combinator</td>
+                <td>A B</td>
+                <td>The (space) combinator selects nodes that are descendants of the first element.</td>
+                <td>
+                    <div class="a1 combinator-default" style="width:100px;margin:10px;border:solid 1px black">
+                        A
+                        <div class="a2 combinator-default" style="width:80%;border:solid 1px black">B
+                            <div class="a2 combinator-default" style="width:80%;border:solid 1px black">B</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>2. Child combinator</td>
+                <td>A > B</td>
+                <td>The > combinator selects nodes that are direct children of the first element.</td>
+                <td>
+                    <div class="b1 combinator-default" style="width:100px;margin:10px;border:solid 1px black">
+                        A
+                        <div class="b2 combinator-default" style="width:80%;border:solid 1px black">B
+                            <div class="b2 combinator-default" style="width:80%;border:solid 1px black">B</div>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>3. General sibling combinator</td>
+                <td>A ~ B</td>
+                <td>The ~ combinator selects siblings. This means that the second element follows the first (though not
+                    necessarily immediately), and both share the same parent.</td>
+                <td>
+                    <div class="c1 combinator-default" style="width:100px;margin:10px;border:solid 1px black">
+                        A
+                    </div>
+                    <div class="c2 combinator-default"
+                        style="width:100px;margin:0px 10px 10px 10px;border:solid 1px black">
+                        B
+                    </div>
+                    <div class="c2 combinator-default"
+                        style="width:100px;margin:0px 10px 10px 10px;border:solid 1px black">
+                        B
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td>4. Adjacent sibling combinator</td>
+                <td>A + B</td>
+                <td>The + combinator selects adjacent siblings. This means that the second element directly follows the
+                    first, and both share the same parent.</td>
+                <td>
+                    <div class="d1 combinator-default" style="width:100px;margin:10px;border:solid 1px black">
+                        A
+                    </div>
+                    <div class="d2 combinator-default"
+                        style="width:100px;margin:0px 10px 10px 10px;border:solid 1px black">
+                        B
+                    </div>
+                    <div class="d2 combinator-default"
+                        style="width:100px;margin:0px 10px 10px 10px;border:solid 1px black">
+                        B
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <th>property</th>
+            <th>value</th>
+            <th>unit</th>
+            <th>differentiation</th>
+        </thead>
+        <tbody>
+            <td>
+                <ol>
+                    <li>Property for content: color, size, font, text, list-style-type, Height, Width, background</li>
+                    <li>Property for border: border, table</li>
+                    <li>Property for padding: padding (top right buttom left)</li>
+                    <li>Property for margin: margin (top right buttom left)</li>
+                    <li>Property for element: display, Height, Width, Position, Float, Align, Flex, Grid</li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                    <li>Absolute lengths</li>
+                    <li>Relative lengths</li>
+                </ol>
+            </td>
+            <td>Absolute lengths
+                <ol>
+                    <li>cm เซนติเมตร</li>
+                    <li>mm มิลลิเมตร</li>
+                    <li>in นิ้ว</li>
+                    <li>px พิกเซล 1/96 นิ้ว</li>
+                    <li>pt พอยท์ 1/72 นิ้ว</li>
+                    <li>pc พิคาล 1/12 นิ้ว</li>
+                </ol>
+                Relative lengths
+                <ol>
+                    <li>em เท่ากับขนาดฟอนต์ element</li>
+                    <li>ex เท่ากับความสูงของฟอนต์ element</li>
+                    <li>ch ความกว้างของตัวหนังสือใน parent element</li>
+                    <li>rem เท่าขนาดฟอนต์ของ root element</li>
+                    <li>vh % ความสูงของหน้าจอ</li>
+                    <li>vw % ความกว้างของหน้าจอ</li>
+                    <li>vmin % ของ view point ต่ำสุด</li>
+                    <li>vmax % ของ view point สูงสุด</li>
+                    <li>% ของ parent element</li>
+                </ol>
+            </td>
+            <td>Absolute lengths เป็นค่าที่แน่นอน แต่ Relative lengths เป็นค่าที่เปลี่ยนแปลงตามค่าอื่นๆเช่น element,
+                parenet element, root element, view point</td>
+        </tbody>
+    </table>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>display value</th>
+                <th>grid</th>
+                <th>flex</th>
+                <th>justify and align</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ol>
+                        <li>inline: Displays an element as an inline element (like &ltspan&gt). Any height and width
+                            properties will have no effect</li>
+                        <li>block: Displays an element as a block element (like &ltp&gt). It starts on a new line, and
+                            takes up the whole width</li>
+                        <li>contents: Makes the container disappear, making the child elements children of the element
+                            the next level up in the DOM</li>
+                        <li>flex: Displays as element as a block-level flex container</li>
+                        <li>grid: Displays an element as a block-level grid container</li>
+                        <li>inline-block: Displays an element as an inline-level block container. The element itself is
+                            formatted as an inline element, but you can apply height and width values</li>
+                        <li>inline-flex: Displays an element as an inline-level flex container</li>
+                        <li>inline-grid: Displays an element as an inline-level grid container</li>
+                        <li>inline-table: The element is displayed as an inline-level table</li>
+                        <li>list-item: Let the element behave like a &ltli&gt element</li>
+                        <li>run-in: Displays an element as either block or inline, depending on context</li>
+                        <li>table: Let the element behave like a &lttable&gt element</li>
+                        <li>table-caption: Let the element behave like a &ltcaption&gt element</li>
+                        <li>table-column-group: Let the element behave like a &ltcolgroup&gt element</li>
+                        <li>table-header-group: Let the element behave like a &ltthead&gt element</li>
+                        <li>table-footer-group: Let the element behave like a &lttfoot&gt element</li>
+                        <li>table-row-group: Let the element behave like a &lttbody&gt element</li>
+                        <li>table-cell: Let the element behave like a &lttd&gt element</li>
+                        <li>table-column: Let the element behave like a &ltcol&gt element</li>
+                        <li>table-row: Let the element behave like a &lttr&gt element</li>
+                        <li>none: The element is completely removed</li>
+                        <li>initial: Sets this property to its default value. Read about initial</li>
+                        <li>inherit: Inherits this property from its parent element. Read about inherit</li>
+                    </ol>
+                </td>
+                <td>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it
+                    easier to design web pages without having to use floats and positioning.</td>
+                <td>The flex property sets the flexible length on flexible items.</td>
+                <td>justify-content used for align items horizontally in flex display but align-items is vertically</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>For example grid</h3>
+    <div class="grid-container">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item4">4</div>
+        <div class="item5">5</div>
+        <div class="item6">6</div>
+    </div>
+    <h3>For example flex</h3>
+    <div class="flex-container">
+        <div class="flex-item">1</div>
+        <div class="flex-item">2</div>
+        <div class="flex-item">3</div>
+        <div class="flex-item">4</div>
+        <div class="flex-item">5</div>
+        <div class="flex-item">6</div>
+    </div>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>position</th>
+                <th>z-index</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <ol>
+                        <li>static: Default value. Elements render in order, as they appear in the document flow</li>
+                        <li>absolute: The element is positioned relative to its first positioned (not static) ancestor
+                            element</li>
+                        <li>fixed: The element is positioned relative to the browser window</li>
+                        <li>relative: The element is positioned relative to its normal position, so "left:20px" adds 20
+                            pixels to the element's LEFT position</li>
+                        <li>sticky: The element is positioned based on the user's scroll position</li>
+                        <li>initial: Sets this property to its default value.</li>
+                        <li>inherit: Inherits this property from its parent element.</li>
+                    </ol>
+                </td>
+                <td>
+                    <ol>
+                        <li>auto: Sets the stack order equal to its parents. This is default</li>
+                        <li>number: Sets the stack order of the element. Negative numbers are allowed</li>
+                        <li>initial: Sets this property to its default value.</li>
+                        <li>inherit: Inherits this property from its parent element.</li>
+                    </ol>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>For example position (left 50px, bottom 40px)</h3>
+    <div class="position-parent">Parent div<br>
+        Position: static<br>
+        <div class="position-container">
+            <div class="position-item" style="position: static;">static</div>
+        </div>
+        Position: absolute<br>
+        <div class="position-container">
+            <div class="position-item" style="position: absolute;">absolute</div>
+        </div>
+        Position: fixed<br>
+        <div class="position-container">
+            <div class="position-item" style="position: fixed;">fixed</div>
+        </div>
+        Position: relative<br>
+        <div class="position-container">
+            <div class="position-item" style="position: relative;">relative</div>
+        </div>
+        Position: initial<br>
+        <div class="position-container">
+            <div class="position-item" style="position: initial;">initial</div>
+        </div>
+    </div>
+    <h3>For example z-index</h3>
+    <div style="position: relative;">
+        <div class="z-index-auto">z-index: auto</div>
+        <div class="z-index-1">z-index: 1</div>
+        <div class="z-index-2">z-index: 2</div>
+        <div class="z-index-3">z-index: 3</div>
+        <div class="z-index-4">z-index: 4</div>
+        <div class="z-index-initial">z-index: initial</div>
+    </div>
+</body>
+
+</html>

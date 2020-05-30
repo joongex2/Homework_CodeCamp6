@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .animation-color-change {
+            width: 50px;
+            height: 50px;
+            animation: animation-color-change 2.5s 0s infinite ease normal;
+            margin-bottom: 10px;
+        }
+        @keyframes animation-color-change {
+            0% {
+                background-color: red;
+            }
+            25% {
+                background-color: orange;
+            }
+            50% {
+                background-color: yellow;
+            }
+            75% {
+                background-color: green;
+            }
+            100% {
+                background-color: blue;
+            }
+        }
+        .animation-show-hide {
+            width: 50px;
+            height: 50px;
+            animation: animation-show-hide 2.5s 0s 1 linear reverse;
+            opacity: 0;
+            background-color: black;
+            margin-bottom: 10px;
+        }
+        @keyframes animation-show-hide {
+            0% {
+                opacity: 0;
+            }
+            25% {
+                opacity: 0.25;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            75% {
+                opacity: 0.75;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        .animation-move {
+            width: 50px;
+            height: 50px;
+            position: relative;
+            animation: animation-move 2.5s 0s infinite cubic-bezier(1, 0, 0, 1) alternate ;
+            left: 0px;
+            background-color: black;
+            margin-bottom: 10px;
+        }
+        @keyframes animation-move {
+            0% {
+                left: 10px;
+            }
+            25% {
+                left: 20px;
+            }
+            50% {
+                left: 50px;
+            }
+            75% {
+                left: 75px;
+            }
+            100% {
+                left: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation-color-change"></div>
+    <div class="animation-show-hide"></div>
+    <div class="animation-move"></div>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: RobotoCondensed-Regular;
+            src: url("font/RobotoCondensed-Regular.ttf");
+        }
+        * {
+            font-family: RobotoCondensed-Regular;
+        }
+
+        .image-container img {
+            display: block;
+            margin: 0 auto;
+        }
+
+        .grid-container {
+            display: grid;
+        }
+
+        .grid-item {
+            text-align: center;
+            padding: 10px;
+            border: solid 1px black;
+        }
+
+        .item-title {
+            border: solid 1px black;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            border: solid 1px black;
+            width: 88%;
+            margin: 50px auto;
+        }
+
+        /* phone */
+        @media only screen and (max-width: 560px) {
+            .grid-container {
+                grid-template-columns: auto;
+                grid-gap: 3%;
+            }
+        }
+        /* tablet */
+        @media only screen and (min-width: 561px) and (max-width: 840px) {
+            .grid-container {
+                grid-template-columns: repeat(2, auto);
+                grid-gap: 4%;
+            }
+        }
+
+        /* website */
+        @media only screen and (min-width: 841px) {
+            .grid-container {
+                grid-template-columns: repeat(3, auto);
+                grid-gap: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="image-container">
+        <img src="img/css3_logo.png" alt="css3" width="300px">
+    </div>
+    <div class="grid-container">
+        <div class="grid-item">
+            <div class="item-title">title</div>
+            <div class="item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam esse distinctio ab iure reprehenderit! Itaque temporibus illum vero quos, natus nam culpa asperiores, earum nemo ipsum assumenda tenetur modi?</div>
+        </div>
+        <div class="grid-item">
+            <div class="item-title">title</div>
+            <div class="item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam esse distinctio ab iure reprehenderit! Itaque temporibus illum vero quos, natus nam culpa asperiores, earum nemo ipsum assumenda tenetur modi?</div>
+        </div>
+        <div class="grid-item">
+            <div class="item-title">title</div>
+            <div class="item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam esse distinctio ab iure reprehenderit! Itaque temporibus illum vero quos, natus nam culpa asperiores, earum nemo ipsum assumenda tenetur modi?</div>
+        </div>
+        <div class="grid-item">
+            <div class="item-title">title</div>
+            <div class="item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam esse distinctio ab iure reprehenderit! Itaque temporibus illum vero quos, natus nam culpa asperiores, earum nemo ipsum assumenda tenetur modi?</div>
+        </div>
+        <div class="grid-item">
+            <div class="item-title">title</div>
+            <div class="item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam esse distinctio ab iure reprehenderit! Itaque temporibus illum vero quos, natus nam culpa asperiores, earum nemo ipsum assumenda tenetur modi?</div>
+        </div>
+        <div class="grid-item">
+            <div class="item-title">title</div>
+            <div class="item-description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Optio numquam esse distinctio ab iure reprehenderit! Itaque temporibus illum vero quos, natus nam culpa asperiores, earum nemo ipsum assumenda tenetur modi?</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="item-title">title</div>
+        <div class="item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad provident doloribus aperiam fugiat magnam voluptatem a iusto soluta voluptas doloremque, omnis fugit eligendi laboriosam deleniti sapiente molestias hic consequatur unde corporis illum aspernatur dolorem. Praesentium quia ipsam eum magni, odit quibusdam fugit perferendis facilis reprehenderit hic animi voluptas dolorum ea, expedita, aliquam consequatur rem iste soluta mollitia sapiente alias delectus?</div>
+    </div>
+</body>
+
+</html>
