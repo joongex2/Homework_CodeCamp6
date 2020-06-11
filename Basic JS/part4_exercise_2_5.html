@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 1. ans 3 2 1
+    // let i = 3;
+    // while(i) {
+    //     alert(i--);
+    // }
+    // 2.
+    // let i = 0; // 1 2 3 4 
+    // while (++i < 5) alert(i);
+    // i = 0; // 1 2 3 4 5
+    // while (i++ < 5) alert(i);
+    // 3. // same 0 1 2 3 4
+    // for (let i = 0; i < 5; i++) alert(i);
+    // for (let i = 0; i < 5; ++i) alert(i);
+    // 4.
+    // for (let i = 2; i < 11; i++) alert(i);
+    // 5.
+    // let i = 0;
+    // while (i < 3) {
+    //     alert(`number ${i}!`);
+    //     i++;
+    // }
+    // 6.
+    let firstNumber = prompt("Player1 enter number");
+    let secondNumber;
+    while (firstNumber != secondNumber) {
+        secondNumber = prompt("Player2 enter number");
+        if (secondNumber > firstNumber) {
+            alert("more than answer");
+        } else if (secondNumber < firstNumber) {
+            alert("less than answer");
+        } else {
+            alert("correct!");
+        }
+    }
+</script>
+</html>

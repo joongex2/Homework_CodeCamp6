@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.
+        // alert( null || 2 || undefined ); //2 
+        // alert( alert(1) || 2 || alert(3) ); //1 2
+        // alert( 1 && null && 2 ); //null
+        // alert( alert(1) && alert(2) ); //1 undefined
+        // alert( null || 2 && 3 || 4 ); //true
+        // 2.
+        // let age2 = prompt("how old are you?");
+        // if (age2 >= 18 && age2 <= 60) {
+        //     alert("your age is between 18 and 60");
+        // }
+        // 3.
+        // let age3 = prompt("how old are you?");
+        // if (age3 < 18 || age3 > 60) {
+        //     alert("your age is not between 18 and 60");
+        // }
+        // 4.
+        // if (-1 || 0) alert( 'first' );
+        // if (-1 && 0) alert( 'second' );
+        // if (null || -1 && 0) alert('third');
+        // 5.
+        let user = prompt("who login?");
+        if (user == "Admin") {
+            let password = prompt("enter password");
+            if (password == "codecamp#5") {
+                alert("ยินดีต้อนรับ");
+            } else if (!password) {
+                alert("ยกเลิก");
+            } else {
+                alert("Wrong password");
+            }
+        } else if (!user) {
+            alert("ยกเลิก");
+        } else {
+            alert("ผมไม่รู้จักคุณ");
+        }
+    </script>
+</body>
+
+</html>
