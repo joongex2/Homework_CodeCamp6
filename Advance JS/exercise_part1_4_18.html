@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 1.
+    let object = {}
+    object.name = "Sonter";
+    object.surname = "Pakorn";
+    object.name = "Boy";
+    delete object.name;
+    console.log(object);
+
+    // 2.
+    object21 = {prop: "1"};
+    object22 = {};
+    console.log(isEmpty(object21));
+    console.log(isEmpty(object22));
+    function isEmpty(obj) {
+        for(let key in obj) {
+            return false;
+        }
+        return true;
+    }
+
+    // 3.
+    const user = {
+        name: "John"
+    };
+
+    user.name = "Pete";
+    // No errors;
+
+    // 4.
+    let salaries = {
+        John: 100,
+        Ann: 160,
+        Pete: 130
+    }
+    console.log(sum(salaries));
+
+    function sum(obj) {
+        let sum = 0;
+        for(let key in salaries){
+            sum += obj[key];
+        }
+        return sum;
+    }
+
+    // 5.
+    let menu = {
+        width: 200,
+        height: 300,
+        title: "My menu"
+    };
+    console.log(menu);
+    multiplyNumeric(menu, 2);
+    console.log(menu);
+
+    function multiplyNumeric(obj, times) {
+        for(let key in obj) {
+            if (typeof obj[key] != "number") continue;
+            obj[key] *= times;
+        }
+    }
+
+</script>
+</html>

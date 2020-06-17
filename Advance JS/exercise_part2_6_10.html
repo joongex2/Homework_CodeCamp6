@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    function unique(arr) {
+        let result = new Set();
+        let uniqueValues = "";
+        for(let item of arr) {
+            result.add(item);
+        }
+        for(let item of result) {
+            uniqueValues += `${item}, `;
+        }
+        return uniqueValues.slice(0, uniqueValues.length-2);
+    }
+
+    let values = ["Hare", "Krishna", "Hare", "Krishna", "Krishna", "Krishna", "Hare", "Hare", ":-O"];
+    console.log("1. ");
+    console.log(values);
+    console.log( unique(values) );
+    
+    // 3.
+    console.log("3. ");
+    let map = new Map();
+    map.set("name", "John");
+    let keys = [];
+    for (let key of map.keys()) {
+        keys.push(key);
+    }
+    keys.push("more");
+    console.log(keys);
+</script>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 1.
+    // let user = {
+    //     name: "John",
+    //     go: function() {
+    //         alert(this.name);
+    //     }
+    // };
+    // (user.go)();
+
+    // 2.
+    // function makeUser() {
+    //     return {
+    //         name: "John",
+    //         ref: this
+    //     };
+    // };
+
+    // let user = makeUser();
+
+    // alert( user.ref.name );
+    // 3.
+    // let calculator = {
+    //     value1: 0,
+    //     value2: 0,
+    //     read: function() {
+    //         this.value1 = +prompt("Enter first value");
+    //         this.value2 = +prompt("Enter second value")
+    //     },
+    //     sum: function() {
+    //         return this.value1 + this.value2;
+    //     },
+    //     mul: function() {
+    //         return this.value1 * this.value2;
+    //     }
+    // }
+    // calculator.read();
+    // alert( calculator.sum() );
+    // alert( calculator.mul() );
+    // 4.
+    let ladder = {
+        step: 0,
+        up() {
+            this.step++;
+            return this;
+        },
+        down() {
+            this.step--;
+            return this;
+        },
+        showStep: function() {
+            alert( this.step );
+            return this;
+        }
+    };
+    // ladder.up();
+    // ladder.up();
+    // ladder.down();
+    // ladder.showStep();
+    ladder.up().up().down().showStep();
+</script>
+</html>

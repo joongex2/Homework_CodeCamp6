@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.
+    let salaries = {
+        "John": 100,
+        "Pete": 300,
+        "Mary": 250
+    };
+
+    function sumSalaries(salaries) {
+        let sum = 0;
+        let map = new Map(Object.entries(salaries));
+        for(let salary of map.values()) {
+            sum += salary;
+        }
+        return sum;
+    }
+
+    console.log("1.");
+    console.log(sumSalaries(salaries));
+
+    // 2.
+    let user = {
+        name: 'John',
+        age: 30
+    };
+
+    function count(object) {
+        let countKey = 0;
+        let map = new Map(Object.entries(object));
+        for (let key of map.entries()) {
+            countKey++;
+        }
+        return countKey;
+    }
+    console.log("2.")
+    console.log(count(user));
+
+</script>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.
+    // let fruits = ["Apples", "Pear", "Orange"];
+
+    // let shoppingCart = fruits;
+    // shoppingCart.push("Banana");
+
+    // alert( fruits.length );
+    // 2.
+    // let styles = ["Jazz", "Blues"];
+    // styles.push("Rock-n-Roll");
+    // styles[Math.floor(styles.length/2)] = "Classics";
+    // styles.shift();
+    // styles.unshift("Rap", "Reggae");
+    // 3.
+    // let array = [];
+    // let inputArray = +prompt("Enter value");
+    // let sum = 0;
+    // while(!isNaN(inputArray)) {
+    //     array.push(inputArray);
+    //     inputArray = +prompt("Enter value");
+    // }
+    // for(let item of array) {
+    //     sum += item;
+    // }
+    // alert(`sum is ${sum}`);
+    // 4.
+    function getMaxSubSum(arr) {
+        let max = 0;
+        let sumCon = 0;
+        let findMax = [];
+        for (i = 0; i < arr.length; i++) {
+            sumCon = arr[i];
+            findMax.push(sumCon);
+            for (j = i; j < arr.length-1; j++) {
+                sumCon = sumCon + arr[j+1];
+                findMax.push(sumCon);
+            }
+            let maxInArray = Math.max(...findMax);
+            if (maxInArray > max) {
+                max = maxInArray;
+            }
+            findMax = [];
+        }
+        return max;
+    }
+    console.log(getMaxSubSum([-1, 2, 3, -9]));
+    console.log(getMaxSubSum([2, -1, 2, 3, -9]));
+    console.log(getMaxSubSum([-1, 2, 3, -9, 11]));
+    console.log(getMaxSubSum([-2, -1, 1, 2]));
+    console.log(getMaxSubSum([100, -9, 2, -3, 5]));
+    console.log(getMaxSubSum([1, 2, 3]));
+</script>
+</html>

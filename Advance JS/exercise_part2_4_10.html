@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // 1.1
+    let array11_1 = [1, 2, 30, 400];
+    let array11_2 = array11_1.map(function (x) {
+        return x * 2;
+    });
+    console.log("1.1");
+    console.log(array11_1);
+    console.log(array11_2);
+    // 1.2
+    let array12_1 = [1, 2, 3, 4];
+    let array12_2 = array12_1.map(function (x) {
+        return String(x);
+    });
+    console.log("1.2");
+    console.log(array12_1);
+    console.log(array12_2);
+    // 1.3
+    let array13_1 = [1, "1", 2, {}];
+    let array13_2 = array13_1.map(function (x) {
+        return typeof x;
+    });
+    console.log("1.3");
+    console.log(array13_1);
+    console.log(array13_2);
+    // 1.4
+    let array14_1 = ["apple", "banana", "orange"];
+    let array14_2 = array14_1.map(function (x) {
+        return x.toUpperCase();
+    });
+    console.log("1.4");
+    console.log(array14_1);
+    console.log(array14_2);
+    // 1.5
+    let array15_1 = [
+        { name: "apple", age: 14 },
+        { name: "banana", age: 18 },
+        { name: "watermelon", age: 32 }
+    ];
+    let array15_2 = array15_1.map(function (x) {
+        return x.name;
+    });
+    console.log("1.5");
+    console.log(array15_1);
+    console.log(array15_2);
+    // 1.6
+    let array16_1 = [
+        { name: "apple", age: 14 },
+        { name: "banana", age: 18 },
+        { name: "watermelon", age: 32 }
+    ];
+    let array16_2 = array16_1.map(function (x) {
+        return x.age;
+    });
+    console.log("1.6");
+    console.log(array16_1);
+    console.log(array16_2);
+    // 1.7
+    let array17_1 = [
+        { name: "apple", surname: "London" },
+        { name: "banana", surname: "Bangkok" },
+        { name: "watermelon", surname: "Singapore" }
+    ];
+    let array17_2 = array17_1.map(function (x) {
+        return `${x.name} ${x.surname}`;
+    });
+    console.log("1.7");
+    console.log(array17_1);
+    console.log(array17_2);
+    // 1.8
+    let array18_1 = [1, 3, 4, 5, 6, 7, 8];
+    let array18_2 = array18_1.map(function (x) {
+        let result = x % 2 == 0 ? "even" : "odd";
+        return result;
+    });
+    console.log("1.8");
+    console.log(array18_1);
+    console.log(array18_2);
+    // 1.9
+    let array19_1 = [1, -3, 2, 8, -4, 5];
+    let array19_2 = array19_1.map(function (x) {
+        if (x < 0) {
+            return x * -1;
+        }
+        return x;
+    });
+    console.log("1.9");
+    console.log(array19_1);
+    console.log(array19_2);
+    // 1.10
+    let array110_1 = [100, 200.25, 300.84, 400.3];
+    let array110_2 = array110_1.map(function (x) {
+        return x.toFixed(2)
+    });
+    console.log("1.10");
+    console.log(array110_1);
+    console.log(array110_2);
+    // 1.11
+    let array111_1 = [
+        { name: "apple", birth: "2000-01-01" },
+        { name: "banana", birth: "1990-10-01" },
+        { name: "watermelon", birth: "1985-12-01" }
+    ];
+    let array111_2 = array111_1.map(function (x) {
+        let birthDate = new Date(x.birth);
+        var ageDifMs = Date.now() - birthDate;
+        var ageDate = new Date(ageDifMs); // miliseconds from epoch
+        let y = { ...x };
+        y.age = Math.abs(ageDate.getUTCFullYear() - 1970);
+        return y;
+    });
+    console.log("1.11");
+    console.log(array111_1);
+    console.log(array111_2);
+    // 1.12
+    let array112_1 = [
+        { name: "apple", birth: "2000-01-01" },
+        { name: "banana", birth: "1990-10-10" },
+        { name: "watermelon", birth: "1985-12-30" }
+    ];
+    let array112_2 = array112_1.map(function (x) {
+        let birthDate = new Date(x.birth);
+        const month_names_short = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+        return `<tr> <td>${x.name}</td> <td>${String(birthDate.getDate()).padStart(2, '0')} ${month_names_short[birthDate.getMonth()]} ${birthDate.getFullYear()}</td> </tr>`;
+    });
+    console.log("1.12");
+    console.log(array112_1);
+    console.log(array112_2);
+
+    // 2.1
+    let array21_1 = [1, 2, 30, 400];
+    let array21_2 = array21_1.filter(function (x) {
+        return x > 10;
+    });
+    console.log("2.1");
+    console.log(array21_1);
+    console.log(array21_2);
+
+    // 2.2
+    let array22_1 = [1, 2, 3, 4];
+    let array22_2 = array22_1.filter(function (x) {
+        return x % 2 != 0;
+    });
+    console.log("2.2");
+    console.log(array22_1);
+    console.log(array22_2);
+
+    // 2.3
+    let array23_1 = [1, "1", 2, {}];
+    let array23_2 = array23_1.filter(function (x) {
+        return typeof x == "number";
+    });
+    console.log("2.3");
+    console.log(array23_1);
+    console.log(array23_2);
+
+    // 2.4
+    let array24_1 = ["apple", "banana", "orange", "pineapple", "watermeon"];
+    let array24_2 = array24_1.filter(function (x) {
+        return x.length > 6;
+    });
+    console.log("2.4");
+    console.log(array24_1);
+    console.log(array24_2);
+
+    // 2.5
+    let array25_1 = [
+        { name: "apple", age: 14 },
+        { name: "banana", age: 18 },
+        { name: "watermelon", age: 32 },
+        { name: "pineapple", age: 16 },
+        { name: "peach", age: 24 }
+    ];
+    let array25_2 = array25_1.filter(function (x) {
+        return x.age < 18;
+    });
+    console.log("2.5");
+    console.log(array25_1);
+    console.log(array25_2);
+
+    // 2.6
+    let array26_1 = [
+        { name: "apple", age: 14 },
+        { name: "banana", age: 18 },
+        { name: "watermelon", age: 32 },
+        { name: "pineapple", age: 16 },
+        { name: "peach", age: 24 }
+    ];
+    let array26_2 = array26_1.filter(function (x) {
+        return x.age != 32;
+    });
+    console.log("2.6");
+    console.log(array26_1);
+    console.log(array26_2);
+
+    // 2.7
+    let array27_1 = [1, -3, 2, 8, -4, 5];
+    let array27_2 = array27_1.filter(function (x) {
+        return x > 0;
+    });
+    console.log("2.7");
+    console.log(array27_1);
+    console.log(array27_2);
+
+    // 2.8
+    let array28_1 = [1, 3, 4, 5, 6, 7, 8];
+    let array28_2 = array28_1.filter(function (x) {
+        return x % 3 == 0;
+    });
+    console.log("2.8");
+    console.log(array28_1);
+    console.log(array28_2);
+
+    // 2.9
+    let array29_1 = ["peach", 1, -3, "2", {}, []];
+    let array29_2 = array29_1.filter(function (x) {
+        return typeof x == "string"
+    });
+    console.log("2.9");
+    console.log(array29_1);
+    console.log(array29_2);
+
+    // 2.10
+    let array210_1 = ["APPLE", "appLE", "PEACH", "PEach"];
+    let array210_2 = array210_1.filter(function (x) {
+        return x == x.toUpperCase();
+    });
+    console.log("2.10");
+    console.log(array210_1);
+    console.log(array210_2);
+
+    // 2.11
+    let array211_1 = [
+        { name: "apple", birth: "2001-01-01" },
+        { name: "banana", birth: "1990-10-10" },
+        { name: "watermelon", birth: "1985-12-30" },
+        { name: "peach", birth: "2002-10-13" }
+    ];
+    let array211_2 = array211_1.filter(function (x) {
+        let y = new Date(x.birth)
+        return y.getMonth() == 9;
+    });
+    console.log("2.11");
+    console.log(array211_1);
+    console.log(array211_2);
+
+    // 2.12
+    let array212_1 = [
+        { name: "apple", birth: "2001-01-01" },
+        { name: "banana", birth: "1990-10-10" },
+        { name: "watermelon", birth: "1985-12-30" },
+        { name: "peach", birth: "2002-10-13" }
+    ];
+    let array212_2 = array212_1.filter(function (x) {
+        let y = new Date(x.birth)
+        return y.getFullYear() < 2000;
+    });
+    console.log("2.12");
+    console.log(array212_1);
+    console.log(array212_2);
+</script>
+
+</html>

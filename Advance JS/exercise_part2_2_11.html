@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    // 1.
+    alert(ucFirst("hello world"));
+    function ucFirst(input) {
+        input = String(input);
+        return input[0].toUpperCase() + input.slice(1); 
+    }
+    // 2.
+    alert(checkSpam("ff xx viagra asf"))
+    function checkSpam(checkString) {
+        checkString = String(checkString);
+        return checkString.includes("xxx") || checkString.includes("viagra");
+    }
+    // 3.
+    alert(truncate("What I'd like to tell on this topic is:", 20))
+    function truncate(str, maxlength) {
+        let beforeMax = str.slice(0, maxlength);
+        let afterMax = str.slice(maxlength);
+        return beforeMax += "...";
+    }
+    // 4.
+    alert( extractCurrencyValue('$120', 30.5) === 3660);
+    function extractCurrencyValue(string, rate) {
+        string = string.replace(/[$,]+/g,"");
+        console.log(string);
+        return parseFloat(string) * rate;
+    }
+</script>
+</html>

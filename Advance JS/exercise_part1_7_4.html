@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // 1.
+    function Calculator() {
+        this.value1 = 0;
+        this.value2 = 0;
+
+        this.read = function() {
+            this.value1 = +prompt("Enter value1");
+            this.value2 = +prompt("Enter value2");
+        }
+
+        this.sum = function() {
+            return this.value1 + this.value2;
+        }
+
+        this.mul = function() {
+            return this.value1 * this.value2;
+        }
+    }
+
+    let calculator = new Calculator();
+    calculator.read();
+    alert(calculator.sum());
+    alert(calculator.mul());
+    // 2.
+    function Accumulator(startingValue) {
+        this.value = startingValue;
+
+        this.read = function() {
+            this.value += prompt("Enter new value");
+        }
+    }
+    let accumulator = new Accumulator("start");
+    accumulator.read();
+    accumulator.read();
+    accumulator.read();
+    alert(`accumulator value is ${accumulator.value}`);
+
+</script>
+</html>
